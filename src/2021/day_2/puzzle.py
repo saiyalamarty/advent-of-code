@@ -1,15 +1,20 @@
 """Advent of Code 2021 - Day 2"""
 
 
+import os
+
+
 def main():
-    puzzle_1()
-    puzzle_2()
+    return puzzle_1(), puzzle_2()
 
 
 def puzzle_1():
 
     # Read contents of input (as a file) with a context manager
-    with open("input.data", "r") as input_file:
+    file_path = os.path.abspath(
+        os.path.join(os.path.dirname(__file__), 'input.data')
+    )
+    with open(file_path, "r") as input_file:
 
         # Initializing horizontal distance and depth to 0
         hor = 0
@@ -33,11 +38,18 @@ def puzzle_1():
                 case ["forward", x]:
                     hor += int(x)
 
-        print(f"Puzzle 1 -> {hor*dep}")
+        answer = hor * dep
+        print(f"Puzzle 1 -> {answer}")
+
+    return answer
 
 
 def puzzle_2():
-    with open("input.data", "r") as input_file:
+
+    file_path = os.path.abspath(
+        os.path.join(os.path.dirname(__file__), 'input.data')
+    )
+    with open(file_path, "r") as input_file:
 
         aim = 0
         hor = 0
@@ -55,9 +67,11 @@ def puzzle_2():
                     hor += int(x)
                     dep += aim*int(x)
 
-        print(f"Puzzle 2 -> {hor*dep}")
+        answer = hor * dep
+        print(f"Puzzle 2 -> {answer}")
+
+    return answer
 
 
 if __name__ == '__main__':
-    puzzle_1()
-    puzzle_2()
+    main()

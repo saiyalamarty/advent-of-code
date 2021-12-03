@@ -1,6 +1,7 @@
 """Advent of Code 2021 - Day 3"""
 
 
+import os
 import statistics
 from copy import deepcopy
 
@@ -8,11 +9,13 @@ from copy import deepcopy
 def main():
 
     # Read contents of input (as a file) with a context manager
-    with open("input.data", "r") as input_file:
+    file_path = os.path.abspath(
+        os.path.join(os.path.dirname(__file__), 'input.data')
+    )
+    with open(file_path, "r") as input_file:
         numbers = [number.strip("\n") for number in input_file]
 
-    print(puzzle_1(numbers))
-    print(puzzle_2(numbers))
+    return puzzle_1(numbers), puzzle_2(numbers)
 
 
 def puzzle_1(numbers: list[str]) -> int:
@@ -28,7 +31,10 @@ def puzzle_1(numbers: list[str]) -> int:
     gamma = int(gamma, 2)
     epsilon = int(epsilon, 2)
 
-    return gamma * epsilon
+    answer = gamma * epsilon
+    print(f"Puzzle 1 -> {answer}")
+
+    return answer
 
 
 def puzzle_2(numbers_main: list[str]) -> int:
@@ -54,7 +60,10 @@ def puzzle_2(numbers_main: list[str]) -> int:
 
     co2 = int(numbers[0], 2)
 
-    return o2 * co2
+    answer = o2 * co2
+    print(f"Puzzle 2 -> {answer}")
+
+    return answer
 
 
 def filter_numbers(numbers: list[str], position: int, value: str) -> list[str]:
