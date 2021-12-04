@@ -38,6 +38,7 @@ def puzzle_1(numbers: list[str]) -> int:
 
 
 def puzzle_2(numbers_main: list[str]) -> int:
+
     numbers = deepcopy(numbers_main)
     digit_count = len(numbers[0])
     for i in range(digit_count):
@@ -67,11 +68,30 @@ def puzzle_2(numbers_main: list[str]) -> int:
 
 
 def filter_numbers(numbers: list[str], position: int, value: str) -> list[str]:
+    """
+    Filters the list of numbers based on the bit value at a given position
+
+    :param numbers: List of numbers as strings
+    :param position: The bit position to check
+    :param value: The value needed at a given pit position
+    :return: List of filtered numbers as strings
+    """
+
     return [number for number in numbers if number[position] == value]
 
 
 def find_mode(numbers: list[str], position: int) -> str:
+    """
+    Find the mode of a given list of numbers
+
+    :param numbers: List of numbers as strings
+    :param position: The bit position
+    :return: Mode of the digits at the bit position as a str
+    """
+
     numbers = [int(number[position]) for number in numbers]
+
+    # Reverse sorting to get 1 if there are equal number of 0s and 1s
     numbers.sort(reverse=True)
 
     mode = statistics.mode(numbers)
@@ -80,6 +100,13 @@ def find_mode(numbers: list[str], position: int) -> str:
 
 
 def flip_bit(b: str) -> str:
+    """
+    Flip the bit. 0 -> 1 and 1 -> 0
+
+    :param b: Bit to be flipped
+    :return: Flipped bit
+    """
+
     return "0" if b == "1" else "1"
 
 
