@@ -1,5 +1,5 @@
 import os
-from collections import defaultdict, Counter
+from collections import Counter, defaultdict
 from copy import deepcopy
 
 import numpy as np
