@@ -30,6 +30,17 @@ jobs:
       - name: Run isort
         uses: jamescurtin/isort-action@master
 
+  testing:
+    name: Automated Testing
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.10"
+
       - name: Cache pip dependencies
         uses: actions/cache@v1
         with:
@@ -42,7 +53,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install --disable-pip-version-check -r requirements.txt
-          pip install coverage
+          pip install --disable-pip-version-check -r requirements_test.txt
 
       - name: Run unit tests with coverage
         run: |
