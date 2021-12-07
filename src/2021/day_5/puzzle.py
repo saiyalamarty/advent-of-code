@@ -3,11 +3,11 @@ from collections import Counter
 
 
 def main():
+
     # Read contents of input (as a file) with a context manager
     file_path = os.path.abspath(
         os.path.join(os.path.dirname(__file__), 'input.data')
     )
-
     with open(file_path, "r") as input_file:
         coordinates = []
         for line in input_file:

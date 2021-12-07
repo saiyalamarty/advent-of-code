@@ -7,13 +7,14 @@ import numpy as np
 
 def main():
 
-    # Read contents of input (as a file) with a context manager
     file_path = os.path.abspath(
         os.path.join(os.path.dirname(__file__), 'input.data')
     )
 
     board_count = -1
     boards = defaultdict(list)
+
+    # Read contents of input (as a file) with a context manager
     with open(file_path, "r") as input_file:
         for i, line in enumerate(input_file):
             if i == 0:

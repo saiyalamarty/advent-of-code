@@ -19,7 +19,6 @@ def puzzle(days: int) -> int:
     file_path = os.path.abspath(
         os.path.join(os.path.dirname(__file__), 'input.data')
     )
-
     with open(file_path, "r") as input_file:
         for line in input_file:
             fish_states = list(map(int, line.strip().split(",")))
