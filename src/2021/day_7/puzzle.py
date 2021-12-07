@@ -16,7 +16,12 @@ def main():
     min_fuel_1 = min_fuel_2 = np.inf
     for i in range(min(positions), max(positions)):
         min_fuel_1 = min(sum(np.absolute(positions - i)), min_fuel_1)
-        min_fuel_2 = min(sum(int(each * (each + 1) / 2) for each in np.absolute(positions - i)), min_fuel_2)
+        min_fuel_2 = min(
+            sum(
+                int(each * (each + 1) / 2)
+                for each in np.absolute(positions - i)
+            ), min_fuel_2
+        )
 
     print(f"Puzzle 1 -> {min_fuel_1}")
     print(f"Puzzle 2 -> {min_fuel_2}")
