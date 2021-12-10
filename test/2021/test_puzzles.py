@@ -14,9 +14,10 @@ import pytest
         ("day_6", (350917, 1592918715629)),
         ("day_7", (349769, 99540554)),
         ("day_8", (344, 1048410)),
-        ("day_9", (468, 1280496))
+        ("day_9", (468, 1280496)),
+        ("day_10", (296535, 4245130838))
     ],
-    ids=["Day 1", "Day 2", "Day 3", "Day 4", "Day 5", "Day 6", "Day 7", "Day 8", "Day 9"]
+    ids=["Day 1", "Day 2", "Day 3", "Day 4", "Day 5", "Day 6", "Day 7", "Day 8", "Day 9", "Day 10"]
 )
 def test_puzzles(day, result):
     import_path = f"src.2021.{day}.puzzle"
