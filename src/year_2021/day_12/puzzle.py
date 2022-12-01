@@ -6,9 +6,7 @@ from copy import deepcopy
 def main():
 
     # Read contents of input (as a file) with a context manager
-    file_path = os.path.abspath(
-        os.path.join(os.path.dirname(__file__), 'input.data')
-    )
+    file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "input.data"))
 
     from_nodes = []
     to_nodes = []
@@ -88,5 +86,5 @@ class Graph:
             visited.update({start: -1})
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

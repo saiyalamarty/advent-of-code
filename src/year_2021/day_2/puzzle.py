@@ -11,9 +11,7 @@ def main():
 def puzzle_1():
 
     # Read contents of input (as a file) with a context manager
-    file_path = os.path.abspath(
-        os.path.join(os.path.dirname(__file__), 'input.data')
-    )
+    file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "input.data"))
     with open(file_path, "r") as input_file:
 
         # Initializing horizontal distance and depth to 0
@@ -46,9 +44,7 @@ def puzzle_1():
 
 def puzzle_2():
 
-    file_path = os.path.abspath(
-        os.path.join(os.path.dirname(__file__), 'input.data')
-    )
+    file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "input.data"))
     with open(file_path, "r") as input_file:
 
         aim = 0
@@ -65,7 +61,7 @@ def puzzle_2():
 
                 case ["forward", x]:
                     hor += int(x)
-                    dep += aim*int(x)
+                    dep += aim * int(x)
 
         answer = hor * dep
         print(f"Puzzle 2 -> {answer}")
@@ -73,5 +69,5 @@ def puzzle_2():
     return answer
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

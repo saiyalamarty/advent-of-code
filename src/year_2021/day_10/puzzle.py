@@ -4,9 +4,7 @@ import os
 def main():
 
     # Read contents of input (as a file) with a context manager
-    file_path = os.path.abspath(
-        os.path.join(os.path.dirname(__file__), 'input.data')
-    )
+    file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "input.data"))
 
     lines = []
     with open(file_path, "r") as input_file:
@@ -14,29 +12,19 @@ def main():
             lines.append(list(line.strip()))
 
     mapping = {
-        '(': ')',
-        '[': ']',
-        '{': '}',
-        '<': '>',
-        ')': '(',
-        ']': '[',
-        '}': '{',
-        '>': '<'
+        "(": ")",
+        "[": "]",
+        "{": "}",
+        "<": ">",
+        ")": "(",
+        "]": "[",
+        "}": "{",
+        ">": "<",
     }
 
-    puzzle_1_score = {
-        ')': 3,
-        ']': 57,
-        '}': 1197,
-        '>': 25137
-    }
+    puzzle_1_score = {")": 3, "]": 57, "}": 1197, ">": 25137}
 
-    puzzle_2_score = {
-        ')': 1,
-        ']': 2,
-        '}': 3,
-        '>': 4
-    }
+    puzzle_2_score = {")": 1, "]": 2, "}": 3, ">": 4}
 
     illegal_brackets = []
     completions_scores = []
@@ -47,11 +35,11 @@ def main():
 
         for bracket in line:
 
-            if bracket in '([{<':
+            if bracket in "([{<":
                 opened_brackets.append(bracket)
                 continue
 
-            if bracket in ')]}>':
+            if bracket in ")]}>":
                 if not opened_brackets or mapping[bracket] != opened_brackets[-1]:
                     illegal_brackets.append(bracket)
                     is_corrupt = True
@@ -79,5 +67,5 @@ def main():
     return answer_1, answer_2
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

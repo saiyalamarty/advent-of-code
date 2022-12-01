@@ -5,22 +5,20 @@ from copy import deepcopy
 
 def main():
     # Read contents of input (as a file) with a context manager
-    file_path = os.path.abspath(
-        os.path.join(os.path.dirname(__file__), 'input.data')
-    )
+    file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "input.data"))
 
     dots = Counter()
     axis = []
     index = []
     with open(file_path, "r") as input_file:
         for line in input_file:
-            if line == '\n':
+            if line == "\n":
                 break
 
-            dots[tuple(map(int, line.strip().split(',')))] = 1
+            dots[tuple(map(int, line.strip().split(",")))] = 1
 
         for line in input_file:
-            ax, idx = line.strip().lstrip("fold along ").split('=')
+            ax, idx = line.strip().lstrip("fold along ").split("=")
             axis.append(ax)
             index.append(int(idx))
 
@@ -47,8 +45,8 @@ def main():
     x = [dot[0] for dot in dots.keys()]
     y = [dot[1] for dot in dots.keys()]
 
-    answer_2 = '\n' + '\n' .join(
-        ''.join(f'{chr(9608)}{chr(9608)}{chr(9608)}' if (x, y) in dots else '   ' for x in range(max(x) + 1))
+    answer_2 = "\n" + "\n".join(
+        "".join(f"{chr(9608)}{chr(9608)}{chr(9608)}" if (x, y) in dots else "   " for x in range(max(x) + 1))
         for y in range(max(y) + 1)
     )
 
@@ -58,5 +56,5 @@ def main():
     return answer_1
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

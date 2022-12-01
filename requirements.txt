@@ -1,2 +1,1 @@
-advent-of-code-data==1.1.1
-numpy==1.21.4
+numpy==1.23.5

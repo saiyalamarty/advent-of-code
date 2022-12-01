@@ -9,9 +9,7 @@ from copy import deepcopy
 def main():
 
     # Read contents of input (as a file) with a context manager
-    file_path = os.path.abspath(
-        os.path.join(os.path.dirname(__file__), 'input.data')
-    )
+    file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "input.data"))
     with open(file_path, "r") as input_file:
         numbers = [number.strip("\n") for number in input_file]
 
@@ -110,5 +108,5 @@ def flip_bit(b: str) -> str:
     return "0" if b == "1" else "1"
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

@@ -12,7 +12,6 @@ def pop_binary(binary, length, int_cast=True):
 
 
 class Packet:
-
     def __init__(self, binary: str):
         self.binary = binary
 
@@ -101,9 +100,7 @@ def packet_value(packet: Packet):
 
 def main():
     # Read contents of input (as a file) with a context manager
-    file_path = os.path.abspath(
-        os.path.join(os.path.dirname(__file__), 'input.data')
-    )
+    file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "input.data"))
 
     with open(file_path, "r") as input_file:
         for line in input_file:
@@ -122,5 +119,5 @@ def main():
     return answer_1, answer_2
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

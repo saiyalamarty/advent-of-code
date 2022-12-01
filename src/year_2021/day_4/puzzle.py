@@ -7,9 +7,7 @@ import numpy as np
 
 def main():
 
-    file_path = os.path.abspath(
-        os.path.join(os.path.dirname(__file__), 'input.data')
-    )
+    file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "input.data"))
 
     board_count = -1
     boards = defaultdict(list)
@@ -90,5 +88,5 @@ def update_board(board: np.array, number: int) -> np.array:
     return board
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

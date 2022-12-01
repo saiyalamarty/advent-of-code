@@ -10,9 +10,7 @@ class Location:
 def main():
 
     # Read contents of input (as a file) with a context manager
-    file_path = os.path.abspath(
-        os.path.join(os.path.dirname(__file__), 'input.data')
-    )
+    file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "input.data"))
 
     numbers = []
     with open(file_path, "r") as input_file:
@@ -56,7 +54,7 @@ def find_valid_neighbors(numbers, coords, basin_coords):
         (coords[0] - 1, coords[1]),
         (coords[0] + 1, coords[1]),
         (coords[0], coords[1] - 1),
-        (coords[0], coords[1] + 1)
+        (coords[0], coords[1] + 1),
     ]
     for each in adj_coords:
         if numbers[each[1]][each[0]] < 9:
@@ -79,5 +77,5 @@ def find_lows(numbers) -> list[Location]:
     return lows
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

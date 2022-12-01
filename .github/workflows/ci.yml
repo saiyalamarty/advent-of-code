@@ -12,12 +12,13 @@ jobs:
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
         with:
-          python-version: "3.10"
+          python-version: "3.11"
 
       - name: Lint
         run: |
           pip install flake8
           pip install isort
+          pip install black
           make lint
 
   testing:

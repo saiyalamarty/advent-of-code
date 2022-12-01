@@ -5,9 +5,7 @@ from collections import Counter
 def main():
 
     # Read contents of input (as a file) with a context manager
-    file_path = os.path.abspath(
-        os.path.join(os.path.dirname(__file__), 'input.data')
-    )
+    file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "input.data"))
     with open(file_path, "r") as input_file:
         coordinates = []
         for line in input_file:
@@ -59,5 +57,5 @@ def puzzle(coordinates, allow_diagonals: bool):
     return len([count for count in Counter(points).values() if count >= 2])
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

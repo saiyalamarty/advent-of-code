@@ -5,9 +5,7 @@ import re
 def main():
 
     # Read contents of input (as a file) with a context manager
-    file_path = os.path.abspath(
-        os.path.join(os.path.dirname(__file__), 'input.data')
-    )
+    file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "input.data"))
     answer_1 = 0
     numbers = []
     with open(file_path, "r") as input_file:
@@ -99,5 +97,5 @@ def remove_substring(sub, full):
     return (lambda x, y: x.replace(y, ""))(full, sub)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

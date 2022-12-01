@@ -1,17 +1,15 @@
+# I may have referred to an online algorith for this one!!
+
 import heapq
 import os
 from typing import List, TypeVar
 
 import numpy as np
 
-_GridItem = TypeVar('_GridItem')
+_GridItem = TypeVar("_GridItem")
 
 
-def tile(
-    h: int,
-    w: int,
-    sub_grids: List[List[List[_GridItem]]]
-) -> List[List[_GridItem]]:
+def tile(h: int, w: int, sub_grids: List[List[List[_GridItem]]]) -> List[List[_GridItem]]:
     tiled_grid: List[List[_GridItem]] = []
     for _ in range(h):
         tile_row = sub_grids[:w]
@@ -69,9 +67,7 @@ def increment(item, inc):
 
 def main():
     # Read contents of input (as a file) with a context manager
-    file_path = os.path.abspath(
-        os.path.join(os.path.dirname(__file__), 'input.data')
-    )
+    file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "input.data"))
 
     numbers = []
     with open(file_path, "r") as input_file:
@@ -88,7 +84,7 @@ def main():
     sub_grids = []
     for i in range(5):
         for j in range(5):
-            sub_grids.append(all_numbers[i+j])
+            sub_grids.append(all_numbers[i + j])
 
     tiled_numbers = tile(5, 5, sub_grids)
 
@@ -131,5 +127,5 @@ def dijkstras(numbers):
     return heap[0].cost
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
