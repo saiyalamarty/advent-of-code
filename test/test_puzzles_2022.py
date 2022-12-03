@@ -7,8 +7,14 @@ import pytest
     "day, result",
     [
         ("day_1", (70116, 206582)),
+        ("day_2", (9177, 12111)),
+        ("day_3", (8252, 2828)),
     ],
-    ids=["Day 1"],
+    ids=[
+        "Day 1",
+        "Day 2",
+        "Day 3",
+    ],
 )
 def test_puzzles(day, result):
     import_path = f"src.year_2022.{day}.puzzle"
